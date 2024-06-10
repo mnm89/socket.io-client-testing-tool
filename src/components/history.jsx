@@ -1,5 +1,5 @@
-import { Button, ListGroup } from 'react-bootstrap'
-import { Col, Row, Badge } from 'react-bootstrap';
+
+import { Col, Row, Badge,Button, ListGroup  } from 'react-bootstrap';
 import { BsTrash } from 'react-icons/bs';
 
 export default function History({ data, title, stack, channels, clearHistory, emitBack }) {
@@ -8,6 +8,7 @@ export default function History({ data, title, stack, channels, clearHistory, em
       emitBack(item.channel, item.data);
     }
   }
+
 
   const items = data.map((item) => {
     return (

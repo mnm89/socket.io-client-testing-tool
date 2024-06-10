@@ -1,6 +1,12 @@
 import { useState } from "react";
 import History from './history.jsx';
-import { Form, Button, Col, Alert } from 'react-bootstrap';
+import Alert from "react-bootstrap/Alert";
+import Form from "react-bootstrap/Form";
+import Row from "react-bootstrap/Row";
+import Col from "react-bootstrap/Col";
+import Button from "react-bootstrap/Button"
+
+
 
 export default function Listen({ listeners, addListener, listenHistory, clearHistory }) {
 
@@ -38,18 +44,18 @@ export default function Listen({ listeners, addListener, listenHistory, clearHis
           {formValidation.join(', ')}
         </Alert>
         <Form onSubmit={onFormSubmit} noValidate validated={formValidation.length === 0}>
-          <Form.Row className="mb-2">
+          <Row className="mb-2">
             <Col>
               <Form.Control placeholder="listen to a new event..." value={channel} onChange={channelTextBoxChange} />
             </Col>
             <Col>
               <Button variant="success" type="submit" block disabled={formValidation.length !== 0 || channel.length < 1}>Add</Button>
             </Col>
-          </Form.Row>
+          </Row>
         </Form>
       </div>
       <h3>Listening to</h3>
-      {listenerBoxes}
+      {listenerBoxes} 
     </div>
   );
 }

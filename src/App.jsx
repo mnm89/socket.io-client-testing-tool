@@ -1,4 +1,3 @@
-import './App.css';
 import Connection from './components/connection.jsx';
 import Listen from './components/listen.jsx';
 import Emitter from './components/emitter.jsx';
@@ -21,16 +20,16 @@ function App() {
   const [connData, setConnData] = useState({
     connected: false,
     loading: false,
-    server: 'http://localhost:8080',
+    server: 'http://localhost:3000',
     config: '{"path": "/socket.io", "forceNew": true, "reconnectionAttempts": 3, "timeout": 2000}',
     errors: []
   });
 
   const [appConfig, setAppConfig] = useState(0);
-  const [eventsToListenFor, setEventsToListenFor] = useState(['socketio-client', 'message']);
+  const [eventsToListenFor, setEventsToListenFor] = useState(['pong', 'message']);
 
   const [listenTo, setListenTo] = useState([]);
-  const [emitTo, setEmitTo] = useState(['socketio-client', 'socketio-client-ack']);
+  const [emitTo, setEmitTo] = useState(['ping', 'message']);
 
   // Storage
   const [emitHistory, setEmitHistory] = useState([]);
@@ -129,9 +128,6 @@ function App() {
     setEmitHistory(items => [store, ...items]);
   }
 
-  // const histryStackChannelsFilter = (item, channels) => {
-  //   return !channels.includes(item.channel);
-  // }
 
   function clearHistory(stack, channels) {
     switch (stack) {
