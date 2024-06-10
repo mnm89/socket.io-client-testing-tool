@@ -2,7 +2,7 @@
   "name": "socket.io-client-testing-tool",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://github.com/mnm89/socket.io-client-testing-tool",
+  "homepage": ".",
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
