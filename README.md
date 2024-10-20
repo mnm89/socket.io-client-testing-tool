@@ -1,3 +1,3 @@
-## Base
+## Socket IO client testing tool
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This project is an example of client socket IO client implementation, which allows you to subscribe to IO server events. 
